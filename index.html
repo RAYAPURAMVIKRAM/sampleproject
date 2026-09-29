@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technova Pyrieh</title>
-    <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple, modern, and colorful Counter Application built with vanilla HTML, CSS, and JavaScript.">
+  <title>Modern Counter App</title>
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header class="header">
-        <h1 class="logo">Technova Pyrieh</h1>
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Decorative background shapes for visual flair -->
+  <div class="bg-blur bg-blur-1" aria-hidden="true"></div>
+  <div class="bg-blur bg-blur-2" aria-hidden="true"></div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Innovate with Technology</h2>
-            <p>Empowering your ideas with cutting-edge solutions.</p>
-            <a href="#" class="btn">Get Started</a>
-        </div>
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-            alt="Technology Background" class="hero-image" />
-    </section>
+  <main class="container">
+    <div class="counter-card">
+      <header class="card-header">
+        <span class="badge">Simple &amp; Clean</span>
+        <h1 class="card-title">Counter Application</h1>
+      </header>
 
-    <section class="features">
-        <div class="feature">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Innovation" />
-            <h3>Innovation</h3>
-            <p>Leading the way in technological advancements for a better future.</p>
-        </div>
-        <div class="feature">
-            <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Solutions" />
-            <h3>Solutions</h3>
-            <p>Custom solutions tailored to your needs, driving success.</p>
-        </div>
-        <div class="feature">
-            <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Growth" />
-            <h3>Growth</h3>
-            <p>Helping your business grow with innovative technology.</p>
-        </div>
-    </section>
+      <!-- Counter Display Area -->
+      <section class="display-section" aria-label="Counter display">
+        <span class="counter-label" id="counterLabel">Current Count</span>
+        <div id="counterValue" class="counter-value" aria-live="polite" aria-atomic="true">0</div>
+        <div id="counterBadge" class="status-indicator">Zero</div>
+      </section>
 
-    <section class="call-to-action">
-        <h2>Join the Future of Technology</h2>
-        <p>Be part of the innovation revolution today.</p>
-        <a href="#" class="btn btn-primary">Learn More</a>
-    </section>
+      <!-- Action Buttons -->
+      <div class="button-group" role="group" aria-label="Counter controls">
+        <!-- Decrease Button -->
+        <button id="decreaseBtn" class="btn btn-decrease" type="button" aria-label="Decrease counter">
+          <span class="btn-icon" aria-hidden="true">&minus;</span>
+          <span class="btn-text">Decrease</span>
+        </button>
 
-    <footer class="footer">
-        <p>&copy; 2024 Technova Pyrieh. All rights reserved.</p>
-    </footer>
+        <!-- Reset Button -->
+        <button id="resetBtn" class="btn btn-reset" type="button" aria-label="Reset counter to zero">
+          <span class="btn-icon" aria-hidden="true">&#x21bb;</span>
+          <span class="btn-text">Reset</span>
+        </button>
+
+        <!-- Increase Button -->
+        <button id="increaseBtn" class="btn btn-increase" type="button" aria-label="Increase counter">
+          <span class="btn-icon" aria-hidden="true">&#43;</span>
+          <span class="btn-text">Increase</span>
+        </button>
+      </div>
+
+      <!-- Helpful keyboard shortcuts footer -->
+      <footer class="card-footer">
+        <p class="shortcuts-hint">
+          <span>Keyboard shortcuts:</span> 
+          <kbd>+</kbd> or <kbd>&uarr;</kbd> Increase &bull; 
+          <kbd>&minus;</kbd> or <kbd>&darr;</kbd> Decrease &bull; 
+          <kbd>R</kbd> Reset
+        </p>
+      </footer>
+    </div>
+  </main>
+
+  <!-- JavaScript logic -->
+  <script src="script.js"></script>
 </body>
-
 </html>
